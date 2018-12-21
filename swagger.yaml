@@ -1,0 +1,136 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Mushroom-Checker
+  license:
+    name: MIT
+host: mushroom.svenkraus.de
+basePath: /v1
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /mushrooms:
+    get:
+      summary: Lists all previous predictions of mushrooms
+      operationId: getHistory
+      parameters:
+        - name: last
+          in: query
+          description: Display the last N predictions
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: An array of mushroom objects from previous predictions
+          schema:
+            $ref: '#/definitions/Mushrooms'
+        default:
+          description: unexpected
+          schema:
+            $ref: '#/definitions/UnexpectedError'
+    post:
+      summary: Get a new mushroom prediction
+      operationId: predictMushroom
+      responses:
+        "200":
+          description: the predicted mushroom object
+          schema: 
+            $ref: '#/definitions/Mushroom'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/UnexpectedError'
+ 
+
+definitions:
+  Mushroom:
+    required:
+      - cap-shape
+      - cap-surface  
+      - cap-color
+      - bruises
+      - odor
+      - gill-attachment
+      - gill-spacing
+      - gill-size
+      - gill-color
+      - stalk-shape
+      - stalk-root
+      - stalk-surface-above-ring
+      - stalk-surface-below-ring
+      - stalk-color-above-ring
+      - stalk-color-below-ring
+      - veil-type
+      - veil-color
+      - ring-number
+      - ring-type
+      - spore-print-color
+      - population
+      - habitat
+ 
+    properties:
+      class:
+        type: string # e= eatable, p= poisonous
+      cap-shape:
+        type: string # bell=b,conical=c,convex=x,flat=f, knobbed=k,sunken=s
+      cap-surface:
+        type: string # fibrous=f,grooves=g,scaly=y,smooth=s
+      cap-color: 
+        type: string # brown=n,buff=b,cinnamon=c,gray=g,green=r,pink=p,purple=u,red=e,white=w,yellow=y
+      bruises: 
+        type: string # bruises=t,no=f
+      odor: 
+        type: string # almond=a,anise=l,creosote=c,fishy=y,foul=f,musty=m,none=n,pungent=p,spicy=s
+      gill-attachment:
+        type: string # attached=a,descending=d,free=f,notched=n
+      gill-spacing:
+        type: string #close=c,crowded=w,distant=d
+      gill-size:
+        type: string #broad=b,narrow=n
+      gill-color:
+        type: string # black=k,brown=n,buff=b,chocolate=h,gray=g, green=r,orange=o,pink=p,purple=u,red=e,white=w,yellow=y
+      stalk-shape:
+        type: string # enlarging=e,tapering=t
+      stalk-root:
+        type: string # bulbous=b,club=c,cup=u,equal=e,rhizomorphs=z,rooted=r,missing=?
+      stalk-surface-above-ring:
+        type: string # fibrous=f,scaly=y,silky=k,smooth=s
+      stalk-surface-below-ring:
+        type: string # fibrous=f,scaly=y,silky=k,smooth=s
+      stalk-color-above-ring:
+        type: string # brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y
+      stalk-color-below-ring:
+        type: string # brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y
+      veil-type:
+        type: string # partial=p,universal=u
+      veil-color: 
+        type: string # brown=n,orange=o,white=w,yellow=y
+      ring-number:
+        type: string # none=n,one=o,two=t
+      ring-type: 
+        type: string # cobwebby=c,evanescent=e,flaring=f,large=l,none=n,pendant=p,sheathing=s,zone=z
+      spore-print-color: 
+        type: string # black=k,brown=n,buff=b,chocolate=h,green=r,orange=o,purple=u,white=w,yellow=y
+      population: 
+        type: string # abundant=a,clustered=c,numerous=n,scattered=s,several=v,solitary=y
+      habitat:
+        type: string # grasses=g,leaves=l,meadows=m,paths=p,
+  Mushrooms:
+    type: array
+    items:
+      $ref: '#/definitions/Mushroom'
+  UnexpectedError:
+    required:
+      - errorcode
+      - errormessage
+    properties:
+      errorcode:
+        type: integer
+        format: int32
+      errormessage:
+        type: string
