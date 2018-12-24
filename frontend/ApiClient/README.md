@@ -1,4 +1,4 @@
-## @
+## @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812241121
 
 ### Building
 
@@ -19,7 +19,7 @@ navigate to the folder of your consuming project and run one of next commando's.
 _published:_
 
 ```
-npm install @ --save
+npm install @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812241121 --save
 ```
 
 _unPublished (not recommended):_
@@ -37,7 +37,7 @@ npm link
 
 In your project:
 ```
-npm link @
+npm link @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812241121
 ```
 
 In your Angular project:
@@ -45,7 +45,7 @@ In your Angular project:
 
 ```
 // without configuring providers
-import { ApiModule } from '';
+import { ApiModule } from '@skraus/mushroom-api-client';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -65,7 +65,7 @@ export class AppModule {}
 
 ```
 // configuring providers
-import { ApiModule, Configuration, ConfigurationParameters } from '';
+import { ApiModule, Configuration, ConfigurationParameters } from '@skraus/mushroom-api-client';
 
 export function apiConfigFactory (): Configuration => {
   const params: ConfigurationParameters = {
@@ -84,7 +84,7 @@ export class AppModule {}
 ```
 
 ```
-import { DefaultApi } from '';
+import { DefaultApi } from '@skraus/mushroom-api-client';
 
 export class AppComponent {
 	 constructor(private apiGateway: DefaultApi) { }
@@ -123,7 +123,7 @@ export class AppModule {
 If different than the generated base path, during app bootstrap, you can provide the base path to your service. 
 
 ```
-import { BASE_PATH } from '';
+import { BASE_PATH } from '@skraus/mushroom-api-client';
 
 bootstrap(AppComponent, [
     { provide: BASE_PATH, useValue: 'https://your-web-service.com' },
@@ -132,7 +132,7 @@ bootstrap(AppComponent, [
 or
 
 ```
-import { BASE_PATH } from '';
+import { BASE_PATH } from '@skraus/mushroom-api-client';
 
 @NgModule({
     imports: [],
@@ -156,7 +156,7 @@ export const environment = {
 
 In the src/app/app.module.ts:
 ```
-import { BASE_PATH } from '';
+import { BASE_PATH } from '@skraus/mushroom-api-client';
 import { environment } from '../environments/environment';
 
 @NgModule({

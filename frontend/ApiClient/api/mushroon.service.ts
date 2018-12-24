@@ -27,7 +27,7 @@ import { Configuration }                                     from '../configurat
 
 
 @Injectable()
-export class DefaultService {
+export class MushroonService {
 
     protected basePath = 'http://mushroom.svenkraus.de/v1';
     public defaultHeaders = new HttpHeaders();
@@ -108,10 +108,10 @@ export class DefaultService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public predictMushroom(observe?: 'body', reportProgress?: boolean): Observable<Mushroom>;
-    public predictMushroom(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Mushroom>>;
-    public predictMushroom(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Mushroom>>;
-    public predictMushroom(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public predict(observe?: 'body', reportProgress?: boolean): Observable<Mushroom>;
+    public predict(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Mushroom>>;
+    public predict(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Mushroom>>;
+    public predict(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 

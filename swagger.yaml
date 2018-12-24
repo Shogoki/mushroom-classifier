@@ -16,6 +16,8 @@ paths:
   /mushrooms:
     get:
       summary: Lists all previous predictions of mushrooms
+      tags: 
+        - mushroon
       operationId: getHistory
       parameters:
         - name: last
@@ -35,7 +37,9 @@ paths:
             $ref: '#/definitions/UnexpectedError'
     post:
       summary: Get a new mushroom prediction
-      operationId: predictMushroom
+      tags: 
+        - mushroon
+      operationId: predict
       responses:
         "200":
           description: the predicted mushroom object
