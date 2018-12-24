@@ -1,8 +1,8 @@
-## @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812241121
+## @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812241310
 
 ### Building
 
-To build an compile the typescript sources to javascript use:
+To install the required dependencies and to build the typescript sources run:
 ```
 npm install
 npm run build
@@ -10,35 +10,42 @@ npm run build
 
 ### publishing
 
-First build the package than run ```npm publish```
+First build the package then run ```npm publish dist``` (don't forget to specify the `dist` folder!)
 
 ### consuming
 
-navigate to the folder of your consuming project and run one of next commando's.
+Navigate to the folder of your consuming project and run one of next commands.
 
 _published:_
 
 ```
-npm install @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812241121 --save
+npm install @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812241310 --save
 ```
 
-_unPublished (not recommended):_
+_without publishing (not recommended):_
 
 ```
-npm install PATH_TO_GENERATED_PACKAGE --save
+npm install PATH_TO_GENERATED_PACKAGE/dist --save
 ```
 
 _using `npm link`:_
 
-In PATH_TO_GENERATED_PACKAGE:
+In PATH_TO_GENERATED_PACKAGE/dist:
 ```
 npm link
 ```
 
 In your project:
 ```
-npm link @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812241121
+npm link @skraus/mushroom-api-client
 ```
+
+__Note for Windows users:__ The Angular CLI has troubles to use linked npm packages.
+Please refer to this issue https://github.com/angular/angular-cli/issues/8284 for a solution / workaround.
+Published packages are not effected by this issue.
+
+
+#### General usage
 
 In your Angular project:
 
@@ -94,8 +101,8 @@ export class AppComponent {
 Note: The ApiModule is restricted to being instantiated once app wide.
 This is to ensure that all services are treated as singletons.
 
-#### Using multiple swagger files / APIs / ApiModules
-In order to use multiple `ApiModules` generated from different swagger files,
+#### Using multiple OpenAPI files / APIs / ApiModules
+In order to use multiple `ApiModules` generated from different OpenAPI files,
 you can create an alias name when importing the modules
 in order to avoid naming conflicts:
 ```

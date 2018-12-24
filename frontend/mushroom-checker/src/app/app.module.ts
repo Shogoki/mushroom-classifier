@@ -1,19 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+
+//Importing APi client
 import { HttpClientModule } from '@angular/common/http';
 import { ApiModule, BASE_PATH } from '@skraus/mushroom-api-client';
 import { environment } from '../environments/environment';
 
-import { AppComponent } from './app.component';
-import { MushroomPredictionComponent } from './mushroom-prediction/mushroom-prediction.component';
-
 @NgModule({
   declarations: [
-    AppComponent,
-    MushroomPredictionComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     ApiModule
   ],

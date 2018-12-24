@@ -2,5 +2,5 @@
   "npmName": "@skraus/mushroom-api-client",
   "npmVersion": "0.0.1",
   "snapshot": true,
-  "ngVersion": "6.1.3"
+  "ngVersion": "7"
 }
