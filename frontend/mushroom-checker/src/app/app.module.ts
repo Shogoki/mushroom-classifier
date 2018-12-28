@@ -8,16 +8,26 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiModule, BASE_PATH } from '@skraus/mushroom-api-client';
 import { environment } from '../environments/environment';
+import { MushroomPredictionComponent } from './mushroom-prediction/mushroom-prediction.component';
+
+//Angular Material
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MushroomPredictionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ApiModule
+    ApiModule,
+    BrowserAnimationsModule,
+    MatSelectModule
   ],
   providers: [{ provide: BASE_PATH, useValue: environment.API_BASE_PATH }],
   bootstrap: [AppComponent]
