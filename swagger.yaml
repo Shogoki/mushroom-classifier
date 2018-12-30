@@ -80,50 +80,73 @@ definitions:
     properties:
       class:
         type: string # e= eatable, p= poisonous
+        enum: [e, p]
       cap-shape:
-        type: string # bell=b,conical=c,convex=x,flat=f, knobbed=k,sunken=s
+        type: string # bell=b,conical=c,convex=x,flat=f, knobbed=k,sunken=s 6
+        enum: [b, c, x , f , k, s]
       cap-surface:
-        type: string # fibrous=f,grooves=g,scaly=y,smooth=s
+        type: string # fibrous=f,grooves=g,scaly=y,smooth=s 4
+        enum: [f,g,y,s]
       cap-color: 
-        type: string # brown=n,buff=b,cinnamon=c,gray=g,green=r,pink=p,purple=u,red=e,white=w,yellow=y
+        type: string # brown=n,buff=b,cinnamon=c,gray=g,green=r,pink=p,purple=u,red=e,white=w,yellow=y 10
+        enum: [n,b,c,g,r,p,u,e,w,y]
       bruises: 
-        type: string # bruises=t,no=f
+        type: string # bruises=t,no=f 2
+        enum: [t,f]
       odor: 
-        type: string # almond=a,anise=l,creosote=c,fishy=y,foul=f,musty=m,none=n,pungent=p,spicy=s
+        type: string # almond=a,anise=l,creosote=c,fishy=y,foul=f,musty=m,none=n,pungent=p,spicy=s 9
+        enum: [a, l, c, y ,f, m, n, p, s] 
       gill-attachment:
-        type: string # attached=a,descending=d,free=f,notched=n
+        type: string # attached=a,descending=d,free=f,notched=n 4
+        enum: [a, d, f, n]
       gill-spacing:
-        type: string #close=c,crowded=w,distant=d
+        type: string #close=c,crowded=w,distant=d 3
+        enum: [c, w, d]
       gill-size:
-        type: string #broad=b,narrow=n
+        type: string #broad=b,narrow=n 2
+        enum: [b, n]
       gill-color:
-        type: string # black=k,brown=n,buff=b,chocolate=h,gray=g, green=r,orange=o,pink=p,purple=u,red=e,white=w,yellow=y
+        type: string # black=k,brown=n,buff=b,chocolate=h,gray=g, green=r,orange=o,pink=p,purple=u,red=e,white=w,yellow=y 12
+        enum: [k, n, b, h, g, r, o, p, u, e, w, y]
       stalk-shape:
-        type: string # enlarging=e,tapering=t
+        type: string # enlarging=e,tapering=t 2
+        enum: [e, t]
       stalk-root:
-        type: string # bulbous=b,club=c,cup=u,equal=e,rhizomorphs=z,rooted=r,missing=?
+        type: string # bulbous=b,club=c,cup=u,equal=e,rhizomorphs=z,rooted=r,missing=? 7
+        enum: [b, c, u, e, z, r, ?]
       stalk-surface-above-ring:
-        type: string # fibrous=f,scaly=y,silky=k,smooth=s
+        type: string # fibrous=f,scaly=y,silky=k,smooth=s 4
+        enum: [f, y, k, s]
       stalk-surface-below-ring:
-        type: string # fibrous=f,scaly=y,silky=k,smooth=s
+        type: string # fibrous=f,scaly=y,silky=k,smooth=s 4 
+        enum: [f, y, k, s]
       stalk-color-above-ring:
-        type: string # brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y
+        type: string # brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y 9
+        enum: [n, b, c, g, o, p, e, w, y]
       stalk-color-below-ring:
-        type: string # brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y
+        type: string # brown=n,buff=b,cinnamon=c,gray=g,orange=o,pink=p,red=e,white=w,yellow=y 9
+        enum: [n, b, c, g, o, p, e, w, y]
       veil-type:
-        type: string # partial=p,universal=u
+        type: string # partial=p,universal=u 2
+        enum: [p, u]
       veil-color: 
-        type: string # brown=n,orange=o,white=w,yellow=y
+        type: string # brown=n,orange=o,white=w,yellow=y 4
+        enum: [n, o, w, y]
       ring-number:
-        type: string # none=n,one=o,two=t
+        type: string # none=n,one=o,two=t 3 
+        enum: [n, o, t]
       ring-type: 
-        type: string # cobwebby=c,evanescent=e,flaring=f,large=l,none=n,pendant=p,sheathing=s,zone=z
+        type: string # cobwebby=c,evanescent=e,flaring=f,large=l,none=n,pendant=p,sheathing=s,zone=z 8
+        enum: [c, e, f, l, n, p, s, z]
       spore-print-color: 
-        type: string # black=k,brown=n,buff=b,chocolate=h,green=r,orange=o,purple=u,white=w,yellow=y
+        type: string # black=k,brown=n,buff=b,chocolate=h,green=r,orange=o,purple=u,white=w,yellow=y 9
+        enum: [k, n, b, h, r, o, u, w, y]
       population: 
-        type: string # abundant=a,clustered=c,numerous=n,scattered=s,several=v,solitary=y
+        type: string # abundant=a,clustered=c,numerous=n,scattered=s,several=v,solitary=y 6
+        enum: [a, c, n, s, v, y]
       habitat:
-        type: string # grasses=g,leaves=l,meadows=m,paths=p,
+        type: string # grasses=g,leaves=l,meadows=m,paths=p, 4
+        enum: [g, l, m, p]
   Mushrooms:
     type: array
     items:

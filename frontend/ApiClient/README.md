@@ -1,4 +1,4 @@
-## @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812241310
+## @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812301639
 
 ### Building
 
@@ -19,7 +19,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```
-npm install @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812241310 --save
+npm install @skraus/mushroom-api-client@0.0.1-SNAPSHOT.201812301639 --save
 ```
 
 _without publishing (not recommended):_
