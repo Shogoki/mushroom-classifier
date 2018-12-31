@@ -773,4 +773,7 @@ class Mushroom(Model):
 
         self._habitat = habitat
 
-   
+    ##MANUAL:
+    def to_data_string(self):
+        data = self.cap_shape + "," +  self.cap_surface + "," +  self.cap_color + "," +  self.bruises + "," +  self.odor + "," +  self.gill_attachment + "," +  self.gill_spacing + "," +     self.gill_size + "," +  self.gill_color + "," +  self.stalk_shape + "," +  self.stalk_root + "," +  self.stalk_surface_above_ring + "," +  self.stalk_surface_below_ring + "," +            self.stalk_color_above_ring + "," +  self.stalk_color_below_ring + "," +  self.veil_type + "," +  self.veil_color + "," +  self.ring_number + "," +  self.ring_type + "," +            self.spore_print_color + "," +  self.population + "," +  self.habitat
+        return data

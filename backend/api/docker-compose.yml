@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+    mongo:
+      image: mongo
+     
+      volumes:
+        - db:/data/db
+      networks:
+        default:
+            aliases:
+                   - db
+                   - mongo
+      restart: always
+
+    api:
+      build: ./
+      image: shogoki/mushroom-classifier
+      depends_on:
+           - mongo
+      ports: 
+           - 8080:8080
+      networks:
+        default:
+           aliases:
+                   - api
+                   - classifier
+
+volumes:
+  db:

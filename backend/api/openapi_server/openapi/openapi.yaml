@@ -32,8 +32,8 @@ paths:
           description: unexpected
       summary: Lists all previous predictions of mushrooms
       tags:
-      - mushroon
-      x-openapi-router-controller: openapi_server.controllers.mushroon_controller
+      - mushroom
+      x-openapi-router-controller: openapi_server.controllers.mushroom_controller
     post:
       operationId: predict
       requestBody:
@@ -58,9 +58,9 @@ paths:
           description: unexpected error
       summary: Get a new mushroom prediction
       tags:
-      - mushroon
+      - mushroom
       x-codegen-request-body-name: mushroom
-      x-openapi-router-controller: openapi_server.controllers.mushroon_controller
+      x-openapi-router-controller: openapi_server.controllers.mushroom_controller
 components:
   schemas:
     Mushroom:
@@ -282,6 +282,9 @@ components:
           - l
           - m
           - p
+          - u
+          - w
+          - d
           type: string
       required:
       - bruises

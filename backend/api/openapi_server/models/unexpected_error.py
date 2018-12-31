@@ -37,7 +37,7 @@ class UnexpectedError(Model):
         self._errormessage = errormessage
 
     @classmethod
-    def from_dict(cls, dikt)  -> 'UnexpectedError':
+    def from_dict(cls, dikt) -> 'UnexpectedError':
         """Returns the dict as a model
 
         :param dikt: A dict.

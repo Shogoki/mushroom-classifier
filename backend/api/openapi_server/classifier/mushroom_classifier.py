@@ -1,10 +1,10 @@
 import tflearn
 #import hickle
 import os
-import openapi_server.classifier.dataTransformation
+from openapi_server.classifier.dataTransformation import *
 
 class MushroomClassifier(object):
-
+   
 
     def make_model(self):
         input_layer = tflearn.input_data(shape=[None, 126])
@@ -41,31 +41,4 @@ class MushroomClassifier(object):
         prediction = self.model.predict([data])
         return self.parse_prediction(prediction)
 
-    def Mushroom_2_datastring(mushroom):
-        data =""
-        return data
-
-def main():
-    data = "x,y,g,f,f,f,c,b,p,e,b,k,k,n,p,p,w,o,l,h,v,d"
-    classifier = MushroomClassifier("mushroom.model") 
-    print(classifier.predict(data))
-   
-   # model = make_model()
-    #model.load("mushroom.model")
-    #features, lbl = parse_line(data,with_label=False)
-   # print(features)
-    #data = get_binary_features(features)
-   # data = hickle.load("test_features.hkl")
-    #rint(len(data))
-    #print(get_binary_label('p'))
-    #prediction = model.predict([data])
-
-   # print(prediction[0][0])
-    #print(prediction[0][1])
-    #print(prase_prediction(prediction))
-    #print(int(prediction[0][0]))
-    #print(int(prediction[0][1]))
-
-
-if __name__ == "__main__":
-    main()
+    
