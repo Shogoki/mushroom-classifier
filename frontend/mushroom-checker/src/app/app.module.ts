@@ -13,13 +13,15 @@ import { MushroomPredictionComponent } from './mushroom-prediction/mushroom-pred
 //Angular Material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material';
+import { Enum2arrayPipe } from './enum2array.pipe';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MushroomPredictionComponent
+    MushroomPredictionComponent,
+    Enum2arrayPipe
   ],
   imports: [
     BrowserModule,
