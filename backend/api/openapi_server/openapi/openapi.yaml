@@ -1,0 +1,324 @@
+openapi: 3.0.1
+info:
+  license:
+    name: MIT
+  title: Mushroom-Checker
+  version: 1.0.0
+servers:
+- url: http://mushroom.svenkraus.de/v1
+paths:
+  /mushrooms:
+    get:
+      operationId: get_history
+      parameters:
+      - description: Display the last N predictions
+        in: query
+        name: last
+        schema:
+          format: int32
+          type: integer
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mushrooms'
+          description: An array of mushroom objects from previous predictions
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnexpectedError'
+          description: unexpected
+      summary: Lists all previous predictions of mushrooms
+      tags:
+      - mushroon
+      x-openapi-router-controller: openapi_server.controllers.mushroon_controller
+    post:
+      operationId: predict
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mushroom'
+        description: Mushroom descriptive data
+        required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Mushroom'
+          description: the predicted mushroom object
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnexpectedError'
+          description: unexpected error
+      summary: Get a new mushroom prediction
+      tags:
+      - mushroon
+      x-codegen-request-body-name: mushroom
+      x-openapi-router-controller: openapi_server.controllers.mushroon_controller
+components:
+  schemas:
+    Mushroom:
+      example:
+        stalk-color-above-ring: n
+        ring-type: c
+        habitat: g
+        cap-surface: f
+        stalk-surface-below-ring: f
+        stalk-shape: e
+        stalk-root: b
+        odor: a
+        gill-attachment: a
+        gill-size: b
+        veil-color: n
+        ring-number: n
+        population: a
+        bruises: t
+        spore-print-color: k
+        stalk-color-below-ring: n
+        cap-shape: b
+        gill-color: k
+        veil-type: p
+        cap-color: n
+        class: e
+        stalk-surface-above-ring: f
+        gill-spacing: c
+      properties:
+        class:
+          enum:
+          - e
+          - p
+          type: string
+        cap-shape:
+          enum:
+          - b
+          - c
+          - x
+          - f
+          - k
+          - s
+          type: string
+        cap-surface:
+          enum:
+          - f
+          - g
+          - y
+          - s
+          type: string
+        cap-color:
+          enum:
+          - n
+          - b
+          - c
+          - g
+          - r
+          - p
+          - u
+          - e
+          - w
+          - y
+          type: string
+        bruises:
+          enum:
+          - t
+          - f
+          type: string
+        odor:
+          enum:
+          - a
+          - l
+          - c
+          - y
+          - f
+          - m
+          - n
+          - p
+          - s
+          type: string
+        gill-attachment:
+          enum:
+          - a
+          - d
+          - f
+          - n
+          type: string
+        gill-spacing:
+          enum:
+          - c
+          - w
+          - d
+          type: string
+        gill-size:
+          enum:
+          - b
+          - n
+          type: string
+        gill-color:
+          enum:
+          - k
+          - n
+          - b
+          - h
+          - g
+          - r
+          - o
+          - p
+          - u
+          - e
+          - w
+          - y
+          type: string
+        stalk-shape:
+          enum:
+          - e
+          - t
+          type: string
+        stalk-root:
+          enum:
+          - b
+          - c
+          - u
+          - e
+          - z
+          - r
+          - '?'
+          type: string
+        stalk-surface-above-ring:
+          enum:
+          - f
+          - y
+          - k
+          - s
+          type: string
+        stalk-surface-below-ring:
+          enum:
+          - f
+          - y
+          - k
+          - s
+          type: string
+        stalk-color-above-ring:
+          enum:
+          - n
+          - b
+          - c
+          - g
+          - o
+          - p
+          - e
+          - w
+          - y
+          type: string
+        stalk-color-below-ring:
+          enum:
+          - n
+          - b
+          - c
+          - g
+          - o
+          - p
+          - e
+          - w
+          - y
+          type: string
+        veil-type:
+          enum:
+          - p
+          - u
+          type: string
+        veil-color:
+          enum:
+          - n
+          - o
+          - w
+          - y
+          type: string
+        ring-number:
+          enum:
+          - n
+          - o
+          - t
+          type: string
+        ring-type:
+          enum:
+          - c
+          - e
+          - f
+          - l
+          - n
+          - p
+          - s
+          - z
+          type: string
+        spore-print-color:
+          enum:
+          - k
+          - n
+          - b
+          - h
+          - r
+          - o
+          - u
+          - w
+          - y
+          type: string
+        population:
+          enum:
+          - a
+          - c
+          - n
+          - s
+          - v
+          - y
+          type: string
+        habitat:
+          enum:
+          - g
+          - l
+          - m
+          - p
+          type: string
+      required:
+      - bruises
+      - cap-color
+      - cap-shape
+      - cap-surface
+      - gill-attachment
+      - gill-color
+      - gill-size
+      - gill-spacing
+      - habitat
+      - odor
+      - population
+      - ring-number
+      - ring-type
+      - spore-print-color
+      - stalk-color-above-ring
+      - stalk-color-below-ring
+      - stalk-root
+      - stalk-shape
+      - stalk-surface-above-ring
+      - stalk-surface-below-ring
+      - veil-color
+      - veil-type
+      type: object
+    Mushrooms:
+      items:
+        $ref: '#/components/schemas/Mushroom'
+      type: array
+    UnexpectedError:
+      properties:
+        errorcode:
+          format: int32
+          type: integer
+        errormessage:
+          type: string
+      required:
+      - errorcode
+      - errormessage
+      type: object

@@ -40,6 +40,13 @@ paths:
       tags: 
         - mushroon
       operationId: predict
+      parameters:
+        - name: mushroom
+          in: body
+          description: Mushroom descriptive data
+          required: true
+          schema:
+             $ref: '#/definitions/Mushroom'
       responses:
         "200":
           description: the predicted mushroom object
@@ -113,7 +120,7 @@ definitions:
         enum: [e, t]
       stalk-root:
         type: string # bulbous=b,club=c,cup=u,equal=e,rhizomorphs=z,rooted=r,missing=? 7
-        enum: [b, c, u, e, z, r, ?]
+        enum: [b, c, u, e, z, r, '?']
       stalk-surface-above-ring:
         type: string # fibrous=f,scaly=y,silky=k,smooth=s 4
         enum: [f, y, k, s]
@@ -145,8 +152,8 @@ definitions:
         type: string # abundant=a,clustered=c,numerous=n,scattered=s,several=v,solitary=y 6
         enum: [a, c, n, s, v, y]
       habitat:
-        type: string # grasses=g,leaves=l,meadows=m,paths=p, 4
-        enum: [g, l, m, p]
+        type: string # grasses=g,leaves=l,meadows=m,paths=p,urban=u,waste=w,woods=d 7
+        enum: [g, l, m, p, u , w , d]
   Mushrooms:
     type: array
     items:

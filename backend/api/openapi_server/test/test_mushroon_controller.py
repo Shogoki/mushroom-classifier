@@ -5,10 +5,9 @@ from __future__ import absolute_import
 from flask import json
 from six import BytesIO
 
-from swagger_server.models.mushroom import Mushroom  # noqa: E501
-from swagger_server.models.mushrooms import Mushrooms  # noqa: E501
-from swagger_server.models.unexpected_error import UnexpectedError  # noqa: E501
-from swagger_server.test import BaseTestCase
+from openapi_server.models.mushroom import Mushroom  # noqa: E501
+from openapi_server.models.unexpected_error import UnexpectedError  # noqa: E501
+from openapi_server.test import BaseTestCase
 
 
 class TestMushroonController(BaseTestCase):
@@ -23,7 +22,6 @@ class TestMushroonController(BaseTestCase):
         response = self.client.open(
             '/v1/mushrooms',
             method='GET',
-            content_type='application/json',
             query_string=query_string)
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
@@ -35,8 +33,7 @@ class TestMushroonController(BaseTestCase):
         """
         response = self.client.open(
             '/v1/mushrooms',
-            method='POST',
-            content_type='application/json')
+            method='POST')
         self.assert200(response,
                        'Response body is : ' + response.data.decode('utf-8'))
 
