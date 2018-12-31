@@ -1,3 +1,3 @@
-export * from './mushroon.service';
-import { MushroonService } from './mushroon.service';
-export const APIS = [MushroonService];
+export * from './mushroom.service';
+import { MushroomService } from './mushroom.service';
+export const APIS = [MushroomService];

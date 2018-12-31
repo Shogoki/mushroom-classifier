@@ -10,32 +10,231 @@
  * Do not edit the class manually.
  */
 
-/*Adding import to edited enums */
-
-import {Mushroom} from './mushroom_enums'
+import {_Mushroom} from './mushroom_enums'
 
 export interface Mushroom { 
-    _class?: Mushroom.ClassEnum;
-    capShape: Mushroom.CapShapeEnum;
-    capSurface: Mushroom.CapSurfaceEnum;
-    capColor: Mushroom.CapColorEnum;
-    bruises: Mushroom.BruisesEnum;
-    odor: Mushroom.OdorEnum;
-    gillAttachment: Mushroom.GillAttachmentEnum;
-    gillSpacing: Mushroom.GillSpacingEnum;
-    gillSize: Mushroom.GillSizeEnum;
-    gillColor: Mushroom.GillColorEnum;
-    stalkShape: Mushroom.StalkShapeEnum;
-    stalkRoot: Mushroom.StalkRootEnum;
-    stalkSurfaceAboveRing: Mushroom.StalkSurfaceAboveRingEnum;
-    stalkSurfaceBelowRing: Mushroom.StalkSurfaceBelowRingEnum;
-    stalkColorAboveRing: Mushroom.StalkColorAboveRingEnum;
-    stalkColorBelowRing: Mushroom.StalkColorBelowRingEnum;
-    veilType: Mushroom.VeilTypeEnum;
-    veilColor: Mushroom.VeilColorEnum;
-    ringNumber: Mushroom.RingNumberEnum;
-    ringType: Mushroom.RingTypeEnum;
-    sporePrintColor: Mushroom.SporePrintColorEnum;
-    population: Mushroom.PopulationEnum;
-    habitat: Mushroom.HabitatEnum;
+    _class?: _Mushroom.ClassEnum;
+    capShape: _Mushroom.CapShapeEnum;
+    capSurface: _Mushroom.CapSurfaceEnum;
+    capColor: _Mushroom.CapColorEnum;
+    bruises: _Mushroom.BruisesEnum;
+    odor: _Mushroom.OdorEnum;
+    gillAttachment: _Mushroom.GillAttachmentEnum;
+    gillSpacing: _Mushroom.GillSpacingEnum;
+    gillSize: _Mushroom.GillSizeEnum;
+    gillColor: _Mushroom.GillColorEnum;
+    stalkShape: _Mushroom.StalkShapeEnum;
+    stalkRoot: _Mushroom.StalkRootEnum;
+    stalkSurfaceAboveRing: _Mushroom.StalkSurfaceAboveRingEnum;
+    stalkSurfaceBelowRing: _Mushroom.StalkSurfaceBelowRingEnum;
+    stalkColorAboveRing: _Mushroom.StalkColorAboveRingEnum;
+    stalkColorBelowRing: _Mushroom.StalkColorBelowRingEnum;
+    veilType: _Mushroom.VeilTypeEnum;
+    veilColor: _Mushroom.VeilColorEnum;
+    ringNumber: _Mushroom.RingNumberEnum;
+    ringType: _Mushroom.RingTypeEnum;
+    sporePrintColor: _Mushroom.SporePrintColorEnum;
+    population: _Mushroom.PopulationEnum;
+    habitat: _Mushroom.HabitatEnum;
 }
+/*
+export namespace Mushroom {
+    export type ClassEnum = 'e' | 'p';
+    export const ClassEnum = {
+        E: 'e' as ClassEnum,
+        P: 'p' as ClassEnum
+    };
+    export type CapShapeEnum = 'b' | 'c' | 'x' | 'f' | 'k' | 's';
+    export const CapShapeEnum = {
+        B: 'b' as CapShapeEnum,
+        C: 'c' as CapShapeEnum,
+        X: 'x' as CapShapeEnum,
+        F: 'f' as CapShapeEnum,
+        K: 'k' as CapShapeEnum,
+        S: 's' as CapShapeEnum
+    };
+    export type CapSurfaceEnum = 'f' | 'g' | 'y' | 's';
+    export const CapSurfaceEnum = {
+        F: 'f' as CapSurfaceEnum,
+        G: 'g' as CapSurfaceEnum,
+        Y: 'y' as CapSurfaceEnum,
+        S: 's' as CapSurfaceEnum
+    };
+    export type CapColorEnum = 'n' | 'b' | 'c' | 'g' | 'r' | 'p' | 'u' | 'e' | 'w' | 'y';
+    export const CapColorEnum = {
+        N: 'n' as CapColorEnum,
+        B: 'b' as CapColorEnum,
+        C: 'c' as CapColorEnum,
+        G: 'g' as CapColorEnum,
+        R: 'r' as CapColorEnum,
+        P: 'p' as CapColorEnum,
+        U: 'u' as CapColorEnum,
+        E: 'e' as CapColorEnum,
+        W: 'w' as CapColorEnum,
+        Y: 'y' as CapColorEnum
+    };
+    export type BruisesEnum = 't' | 'f';
+    export const BruisesEnum = {
+        T: 't' as BruisesEnum,
+        F: 'f' as BruisesEnum
+    };
+    export type OdorEnum = 'a' | 'l' | 'c' | 'y' | 'f' | 'm' | 'n' | 'p' | 's';
+    export const OdorEnum = {
+        A: 'a' as OdorEnum,
+        L: 'l' as OdorEnum,
+        C: 'c' as OdorEnum,
+        Y: 'y' as OdorEnum,
+        F: 'f' as OdorEnum,
+        M: 'm' as OdorEnum,
+        N: 'n' as OdorEnum,
+        P: 'p' as OdorEnum,
+        S: 's' as OdorEnum
+    };
+    export type GillAttachmentEnum = 'a' | 'd' | 'f' | 'n';
+    export const GillAttachmentEnum = {
+        A: 'a' as GillAttachmentEnum,
+        D: 'd' as GillAttachmentEnum,
+        F: 'f' as GillAttachmentEnum,
+        N: 'n' as GillAttachmentEnum
+    };
+    export type GillSpacingEnum = 'c' | 'w' | 'd';
+    export const GillSpacingEnum = {
+        C: 'c' as GillSpacingEnum,
+        W: 'w' as GillSpacingEnum,
+        D: 'd' as GillSpacingEnum
+    };
+    export type GillSizeEnum = 'b' | 'n';
+    export const GillSizeEnum = {
+        B: 'b' as GillSizeEnum,
+        N: 'n' as GillSizeEnum
+    };
+    export type GillColorEnum = 'k' | 'n' | 'b' | 'h' | 'g' | 'r' | 'o' | 'p' | 'u' | 'e' | 'w' | 'y';
+    export const GillColorEnum = {
+        K: 'k' as GillColorEnum,
+        N: 'n' as GillColorEnum,
+        B: 'b' as GillColorEnum,
+        H: 'h' as GillColorEnum,
+        G: 'g' as GillColorEnum,
+        R: 'r' as GillColorEnum,
+        O: 'o' as GillColorEnum,
+        P: 'p' as GillColorEnum,
+        U: 'u' as GillColorEnum,
+        E: 'e' as GillColorEnum,
+        W: 'w' as GillColorEnum,
+        Y: 'y' as GillColorEnum
+    };
+    export type StalkShapeEnum = 'e' | 't';
+    export const StalkShapeEnum = {
+        E: 'e' as StalkShapeEnum,
+        T: 't' as StalkShapeEnum
+    };
+    export type StalkRootEnum = 'b' | 'c' | 'u' | 'e' | 'z' | 'r' | '?';
+    export const StalkRootEnum = {
+        B: 'b' as StalkRootEnum,
+        C: 'c' as StalkRootEnum,
+        U: 'u' as StalkRootEnum,
+        E: 'e' as StalkRootEnum,
+        Z: 'z' as StalkRootEnum,
+        R: 'r' as StalkRootEnum,
+        QuestionMark: '?' as StalkRootEnum
+    };
+    export type StalkSurfaceAboveRingEnum = 'f' | 'y' | 'k' | 's';
+    export const StalkSurfaceAboveRingEnum = {
+        F: 'f' as StalkSurfaceAboveRingEnum,
+        Y: 'y' as StalkSurfaceAboveRingEnum,
+        K: 'k' as StalkSurfaceAboveRingEnum,
+        S: 's' as StalkSurfaceAboveRingEnum
+    };
+    export type StalkSurfaceBelowRingEnum = 'f' | 'y' | 'k' | 's';
+    export const StalkSurfaceBelowRingEnum = {
+        F: 'f' as StalkSurfaceBelowRingEnum,
+        Y: 'y' as StalkSurfaceBelowRingEnum,
+        K: 'k' as StalkSurfaceBelowRingEnum,
+        S: 's' as StalkSurfaceBelowRingEnum
+    };
+    export type StalkColorAboveRingEnum = 'n' | 'b' | 'c' | 'g' | 'o' | 'p' | 'e' | 'w' | 'y';
+    export const StalkColorAboveRingEnum = {
+        N: 'n' as StalkColorAboveRingEnum,
+        B: 'b' as StalkColorAboveRingEnum,
+        C: 'c' as StalkColorAboveRingEnum,
+        G: 'g' as StalkColorAboveRingEnum,
+        O: 'o' as StalkColorAboveRingEnum,
+        P: 'p' as StalkColorAboveRingEnum,
+        E: 'e' as StalkColorAboveRingEnum,
+        W: 'w' as StalkColorAboveRingEnum,
+        Y: 'y' as StalkColorAboveRingEnum
+    };
+    export type StalkColorBelowRingEnum = 'n' | 'b' | 'c' | 'g' | 'o' | 'p' | 'e' | 'w' | 'y';
+    export const StalkColorBelowRingEnum = {
+        N: 'n' as StalkColorBelowRingEnum,
+        B: 'b' as StalkColorBelowRingEnum,
+        C: 'c' as StalkColorBelowRingEnum,
+        G: 'g' as StalkColorBelowRingEnum,
+        O: 'o' as StalkColorBelowRingEnum,
+        P: 'p' as StalkColorBelowRingEnum,
+        E: 'e' as StalkColorBelowRingEnum,
+        W: 'w' as StalkColorBelowRingEnum,
+        Y: 'y' as StalkColorBelowRingEnum
+    };
+    export type VeilTypeEnum = 'p' | 'u';
+    export const VeilTypeEnum = {
+        P: 'p' as VeilTypeEnum,
+        U: 'u' as VeilTypeEnum
+    };
+    export type VeilColorEnum = 'n' | 'o' | 'w' | 'y';
+    export const VeilColorEnum = {
+        N: 'n' as VeilColorEnum,
+        O: 'o' as VeilColorEnum,
+        W: 'w' as VeilColorEnum,
+        Y: 'y' as VeilColorEnum
+    };
+    export type RingNumberEnum = 'n' | 'o' | 't';
+    export const RingNumberEnum = {
+        N: 'n' as RingNumberEnum,
+        O: 'o' as RingNumberEnum,
+        T: 't' as RingNumberEnum
+    };
+    export type RingTypeEnum = 'c' | 'e' | 'f' | 'l' | 'n' | 'p' | 's' | 'z';
+    export const RingTypeEnum = {
+        C: 'c' as RingTypeEnum,
+        E: 'e' as RingTypeEnum,
+        F: 'f' as RingTypeEnum,
+        L: 'l' as RingTypeEnum,
+        N: 'n' as RingTypeEnum,
+        P: 'p' as RingTypeEnum,
+        S: 's' as RingTypeEnum,
+        Z: 'z' as RingTypeEnum
+    };
+    export type SporePrintColorEnum = 'k' | 'n' | 'b' | 'h' | 'r' | 'o' | 'u' | 'w' | 'y';
+    export const SporePrintColorEnum = {
+        K: 'k' as SporePrintColorEnum,
+        N: 'n' as SporePrintColorEnum,
+        B: 'b' as SporePrintColorEnum,
+        H: 'h' as SporePrintColorEnum,
+        R: 'r' as SporePrintColorEnum,
+        O: 'o' as SporePrintColorEnum,
+        U: 'u' as SporePrintColorEnum,
+        W: 'w' as SporePrintColorEnum,
+        Y: 'y' as SporePrintColorEnum
+    };
+    export type PopulationEnum = 'a' | 'c' | 'n' | 's' | 'v' | 'y';
+    export const PopulationEnum = {
+        A: 'a' as PopulationEnum,
+        C: 'c' as PopulationEnum,
+        N: 'n' as PopulationEnum,
+        S: 's' as PopulationEnum,
+        V: 'v' as PopulationEnum,
+        Y: 'y' as PopulationEnum
+    };
+    export type HabitatEnum = 'g' | 'l' | 'm' | 'p' | 'u' | 'w' | 'd';
+    export const HabitatEnum = {
+        G: 'g' as HabitatEnum,
+        L: 'l' as HabitatEnum,
+        M: 'm' as HabitatEnum,
+        P: 'p' as HabitatEnum,
+        U: 'u' as HabitatEnum,
+        W: 'w' as HabitatEnum,
+        D: 'd' as HabitatEnum
+    };
+}
+*/

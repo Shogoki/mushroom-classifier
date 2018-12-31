@@ -1,16 +1,28 @@
 <h3>Please describe your mushroom.</h3>
 <mat-form-field>
 
-<div *ngFor="let feature of mushroomFeatures()">
-<mat-select placeholder="{{feature.name}}" [(value)]="mushroom[feature]">
-<mat-option *ngFor="let opt of Object.keys(feature.enum)" value="feature.enum[opt]" >opt</mat-option>
-</mat-select>
- 
+<div *ngFor="let feature of getMushroomFeatures()">
+     <mat-select placeholder="{{feature.name}}" >
+ <mat-option value="test">test</mat-option>
+  <!----<mat-option *ngFor="let opt of getValues(feature.Enum)" value="opt">opt</mat-option> -->
+  </mat-select>
 </div>
 </mat-form-field>
 <pre>{{capShape}}</pre>
+
+
+ <!--
+
+<div *ngFor="let opt of getValues(feature.Enum)" >
+    {{opt}}
+  </div>
+
+<mat-select placeholder="{{feature.name}}" [(value)]="mushroom[feature.name]">
+<mat-option *ngFor="let opt of Object.keys(feature.Enum)" value="feature.Enum[opt]" >opt</mat-option>
+</mat-select>
+-->
  <!----<mat-select placeholder="cap shape" [(value)]="capShape"> 
-<!--  <mat-option *ngFor="let food of foods" [value]="food.value"> 
+  <mat-option *ngFor="let food of foods" [value]="food.value"> 
     {{food.viewValue}}
   </mat-option> --
   <mat-option value="b" >bell</mat-option>

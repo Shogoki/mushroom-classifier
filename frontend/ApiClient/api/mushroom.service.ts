@@ -28,7 +28,7 @@ import { Configuration }                                     from '../configurat
 @Injectable({
   providedIn: 'root'
 })
-export class MushroonService {
+export class MushroomService {
 
     protected basePath = 'http://mushroom.svenkraus.de/v1';
     public defaultHeaders = new HttpHeaders();
@@ -106,13 +106,17 @@ export class MushroonService {
     /**
      * Get a new mushroom prediction
      * 
+     * @param mushroom Mushroom descriptive data
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public predict(observe?: 'body', reportProgress?: boolean): Observable<Mushroom>;
-    public predict(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Mushroom>>;
-    public predict(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Mushroom>>;
-    public predict(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public predict(mushroom: Mushroom, observe?: 'body', reportProgress?: boolean): Observable<Mushroom>;
+    public predict(mushroom: Mushroom, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Mushroom>>;
+    public predict(mushroom: Mushroom, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Mushroom>>;
+    public predict(mushroom: Mushroom, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+        if (mushroom === null || mushroom === undefined) {
+            throw new Error('Required parameter mushroom was null or undefined when calling predict.');
+        }
 
         let headers = this.defaultHeaders;
 
@@ -127,10 +131,15 @@ export class MushroonService {
 
         // to determine the Content-Type header
         const consumes: string[] = [
+            'application/json'
         ];
+        const httpContentTypeSelected: string | undefined = this.configuration.selectHeaderContentType(consumes);
+        if (httpContentTypeSelected !== undefined) {
+            headers = headers.set('Content-Type', httpContentTypeSelected);
+        }
 
         return this.httpClient.post<Mushroom>(`${this.configuration.basePath}/mushrooms`,
-            null,
+            mushroom,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
