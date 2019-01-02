@@ -17,7 +17,7 @@ paths:
     get:
       summary: Lists all previous predictions of mushrooms
       tags: 
-        - mushroon
+        - mushroom
       operationId: getHistory
       parameters:
         - name: last
@@ -38,7 +38,7 @@ paths:
     post:
       summary: Get a new mushroom prediction
       tags: 
-        - mushroon
+        - mushroom
       operationId: predict
       parameters:
         - name: mushroom

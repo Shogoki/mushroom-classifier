@@ -176,7 +176,7 @@ export namespace _Mushroom {
         Orange: 'o' as SporePrintColorEnum,
         Purple: 'u' as SporePrintColorEnum,
         White: 'w' as SporePrintColorEnum,
-        Yyellow: 'y' as SporePrintColorEnum
+        Yellow: 'y' as SporePrintColorEnum
     };
     export type PopulationEnum = 'a' | 'c' | 'n' | 's' | 'v' | 'y';
     export const PopulationEnum = {

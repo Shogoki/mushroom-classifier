@@ -11,7 +11,7 @@
  */
 
 
-export interface UnexpectedError { 
+export class UnexpectedError { 
     errorcode: number;
     errormessage: string;
 }

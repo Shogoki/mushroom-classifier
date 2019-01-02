@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_BASE_PATH: 'http://mushroom.svenkraus.de'
+  API_BASE_PATH: 'http://localhost:8080/v1'
 };
 
 /*

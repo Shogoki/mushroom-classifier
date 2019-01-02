@@ -12,28 +12,28 @@
 
 import {_Mushroom} from './mushroom_enums'
 
-export interface Mushroom { 
-    _class?: _Mushroom.ClassEnum;
-    capShape: _Mushroom.CapShapeEnum;
-    capSurface: _Mushroom.CapSurfaceEnum;
-    capColor: _Mushroom.CapColorEnum;
+export class Mushroom { 
+    'class'?: _Mushroom.ClassEnum;
+    'cap-shape': _Mushroom.CapShapeEnum;
+    'cap-surface': _Mushroom.CapSurfaceEnum;
+    'cap-color': _Mushroom.CapColorEnum;
     bruises: _Mushroom.BruisesEnum;
     odor: _Mushroom.OdorEnum;
-    gillAttachment: _Mushroom.GillAttachmentEnum;
-    gillSpacing: _Mushroom.GillSpacingEnum;
-    gillSize: _Mushroom.GillSizeEnum;
-    gillColor: _Mushroom.GillColorEnum;
-    stalkShape: _Mushroom.StalkShapeEnum;
-    stalkRoot: _Mushroom.StalkRootEnum;
-    stalkSurfaceAboveRing: _Mushroom.StalkSurfaceAboveRingEnum;
-    stalkSurfaceBelowRing: _Mushroom.StalkSurfaceBelowRingEnum;
-    stalkColorAboveRing: _Mushroom.StalkColorAboveRingEnum;
-    stalkColorBelowRing: _Mushroom.StalkColorBelowRingEnum;
-    veilType: _Mushroom.VeilTypeEnum;
-    veilColor: _Mushroom.VeilColorEnum;
-    ringNumber: _Mushroom.RingNumberEnum;
-    ringType: _Mushroom.RingTypeEnum;
-    sporePrintColor: _Mushroom.SporePrintColorEnum;
+    'gill-attachment': _Mushroom.GillAttachmentEnum;
+    'gill-spacing': _Mushroom.GillSpacingEnum;
+    'gill-size': _Mushroom.GillSizeEnum;
+    'gill-color': _Mushroom.GillColorEnum;
+    'stalk-shape': _Mushroom.StalkShapeEnum;
+    'stalk-root': _Mushroom.StalkRootEnum;
+    'stalk-surface-above-ring': _Mushroom.StalkSurfaceAboveRingEnum;
+    'stalk-surface-below-ring': _Mushroom.StalkSurfaceBelowRingEnum;
+    'stalk-color-above-ring': _Mushroom.StalkColorAboveRingEnum;
+    'stalk-color-below-ring': _Mushroom.StalkColorBelowRingEnum;
+    'veil-type': _Mushroom.VeilTypeEnum;
+    'veil-color': _Mushroom.VeilColorEnum;
+    'ring-number': _Mushroom.RingNumberEnum;
+    'ring-type': _Mushroom.RingTypeEnum;
+    'spore-print-color': _Mushroom.SporePrintColorEnum;
     population: _Mushroom.PopulationEnum;
     habitat: _Mushroom.HabitatEnum;
 }

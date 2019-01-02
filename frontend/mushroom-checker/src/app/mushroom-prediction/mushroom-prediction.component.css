@@ -1,0 +1,15 @@
+.container {
+    min-height: 100%;
+    width: 100%;
+  }
+
+  h3 {
+      text-align: center;
+  }
+
+  .overlay {
+      position: fixed;
+      top: 45%;
+    left: 45%;
+   
+  }

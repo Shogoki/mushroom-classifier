@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+    web:
+      build: ./
+      image: shogoki/mushroom-checker
+      ports: 
+           - 80:80

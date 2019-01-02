@@ -1,0 +1,40 @@
+
+<!--<div *ngFor="let item of object | keyvalue">
+    {{item.key}}:{{item.value}}
+  </div>
+-->
+<!--
+{{test}}
+<input [(ngModel)]="test">
+  <mat-table [dataSource]="mushrooms" class="mat-table">
+
+       Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition"
+    
+
+    <ng-container *ngFor="let col of displayedColumns" matColumnDef="{{col}}">
+        <mat-header-cell mat-header-cell *matHeaderCellDef> {{col}} </mat-header-cell>
+        <mat-cell id="{{col}}" *matCellDef="let element"  > {{getEnumMember(col,element[col])}} </mat-cell>
+      </ng-container>      
+      
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+    
+-->
+
+<mat-accordion>
+ 
+    <mat-expansion-panel *ngFor="let mushroom of mushrooms" >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+         Mushroom was probably {{getEnumMember("class",mushroom.class)}}
+        </mat-panel-title>
+        <mat-panel-description>
+         Open to view Details
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-list>
+          <mat-list-item *ngFor="let col of displayedColumns" role="listitem">{{col}}: {{getEnumMember(col,mushroom[col])}}</mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>

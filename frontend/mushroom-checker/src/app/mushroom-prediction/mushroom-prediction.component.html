@@ -1,25 +1,50 @@
-<h3>Please describe your mushroom.</h3>
-<mat-form-field>
 
-<div *ngFor="let feature of getMushroomFeatures()">
-     <mat-select placeholder="{{feature.name}}" >
- <mat-option value="test">test</mat-option>
-  <!----<mat-option *ngFor="let opt of getValues(feature.Enum)" value="opt">opt</mat-option> -->
-  </mat-select>
-</div>
+<mat-spinner class="overlay" *ngIf="isLoading"></mat-spinner>
+<div fxLayout="row" fxLayoutAlign="center">
+   
+    <span fxFlex="0 1 90%">
+<h3>Please describe your mushroom to find out if it is safe to eat</h3>
+<!--<mat-form-field>
+<mat-select placeholder="test"><mat-option value="test">test</mat-option></mat-select>
 </mat-form-field>
-<pre>{{capShape}}</pre>
+-->
+
+<div class="container" fxLayout="column" fxLayoutWrap fxLayoutAlign="center" >
+<div class="container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="15px" fxLayoutAlign="center">
+
+<mat-form-field *ngFor="let feature of MushroomFeatures" fxFlex="0 1 calc(25% - 15px)"  fxFlex.lt-md="0 1 calc(50% - 15px)"
+fxFlex.lt-sm="100%">
+ 
+
+  <!----  <label>{{feature.name}}: </label><select matNativeControl  [(ngModel)]="feature.value" >-->
+      <mat-select class="form-control" placeholder="{{feature.name}}" [(value)]="feature.value" required>
+    
+        <mat-option  *ngFor="let opt of getValues(feature.Enum)" value="{{feature.Enum[opt]}}">{{opt}}</mat-option>
+
+      </mat-select>
+      
+    
+  <!--</select>-->
+</mat-form-field>
+</div>
+<button mat-raised-button color="primary" (click)="getPrediction()">Can I eat it?</button>
+<h3>Previous Mushroom Classifications:</h3>
+<app-mushroom-history></app-mushroom-history>
+</div>
 
 
- <!--
-
-<div *ngFor="let opt of getValues(feature.Enum)" >
-    {{opt}}
-  </div>
-
+</span>
+    </div>
+<!---
+<input [ngModel]="mushroom['class']" />
+<div *ngFor="let feature of MushroomFeatures">
+  {{mushroom[feature.name]}}
+</div>-->
+<!--
 <mat-select placeholder="{{feature.name}}" [(value)]="mushroom[feature.name]">
 <mat-option *ngFor="let opt of Object.keys(feature.Enum)" value="feature.Enum[opt]" >opt</mat-option>
 </mat-select>
+
 -->
  <!----<mat-select placeholder="cap shape" [(value)]="capShape"> 
   <mat-option *ngFor="let food of foods" [value]="food.value"> 
@@ -28,3 +53,5 @@
   <mat-option value="b" >bell</mat-option>
   <mat-option value="c" >canonic</mat-option>
 </mat-select> -->
+
+<!--/*//TODO: MAT select // CORS //RESULT Display (Autocomplete with validation?) MessageService?-->
