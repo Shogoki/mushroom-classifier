@@ -23,7 +23,6 @@ export class MushroomPredictionComponent implements OnInit {
   isLoading: Boolean
   MushroomFeatures 
   ngOnInit() {
-    /*this.mushroom = {"capShape": _Mushroom.CapShapeEnum.Bell}*/
   
     this.MushroomFeatures = [
       {

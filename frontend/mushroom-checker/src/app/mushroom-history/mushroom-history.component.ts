@@ -51,7 +51,7 @@ export class MushroomHistoryComponent implements OnInit {
       }
     }
     
-    // Object.keys(_Mushroom['BruisesEnum'])[0]
+   
   }
 
   getHistory() {
