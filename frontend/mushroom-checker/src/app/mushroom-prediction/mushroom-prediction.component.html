@@ -16,7 +16,7 @@
 fxFlex.lt-sm="100%">
  
 
-  <!----  <label>{{feature.name}}: </label><select matNativeControl  [(ngModel)]="feature.value" >-->
+  
       <mat-select class="form-control" placeholder="{{feature.name}}" [(value)]="feature.value" required>
     
         <mat-option  *ngFor="let opt of getValues(feature.Enum)" value="{{feature.Enum[opt]}}">{{opt}}</mat-option>
@@ -24,7 +24,7 @@ fxFlex.lt-sm="100%">
       </mat-select>
       
     
-  <!--</select>-->
+  
 </mat-form-field>
 </div>
 <button mat-raised-button color="primary" (click)="getPrediction()">Can I eat it?</button>
@@ -35,23 +35,3 @@ fxFlex.lt-sm="100%">
 
 </span>
     </div>
-<!---
-<input [ngModel]="mushroom['class']" />
-<div *ngFor="let feature of MushroomFeatures">
-  {{mushroom[feature.name]}}
-</div>-->
-<!--
-<mat-select placeholder="{{feature.name}}" [(value)]="mushroom[feature.name]">
-<mat-option *ngFor="let opt of Object.keys(feature.Enum)" value="feature.Enum[opt]" >opt</mat-option>
-</mat-select>
-
--->
- <!----<mat-select placeholder="cap shape" [(value)]="capShape"> 
-  <mat-option *ngFor="let food of foods" [value]="food.value"> 
-    {{food.viewValue}}
-  </mat-option> --
-  <mat-option value="b" >bell</mat-option>
-  <mat-option value="c" >canonic</mat-option>
-</mat-select> -->
-
-<!--/*//TODO: MAT select // CORS //RESULT Display (Autocomplete with validation?) MessageService?-->
