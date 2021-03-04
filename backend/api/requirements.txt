@@ -6,3 +6,4 @@ tflearn
 pymongo
 numpy
 flask_cors
+pillow>=8.1.1 # not directly required, pinned by Snyk to avoid a vulnerability
